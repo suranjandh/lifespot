@@ -1,0 +1,283 @@
+.msg-shape {
+    position: absolute;
+    right: 15px;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    background-color: orangered;
+    color: white;
+    float: right;
+    text-align: center;
+    padding-top: 1px;
+}
+
+.helpIcon{
+    position: absolute;
+    right: 15px;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    /* background-color: orangered; */
+    color: white;
+    float: right;
+    text-align: center;
+    padding-top: 1px;
+}
+
+/*#members-content*/
+
+#members-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    /* grid-auto-rows: minmax(200px, auto); */
+    grid-gap: 10px;
+    /* max-width: 960px; */
+    margin: 0 auto;
+
+
+}
+
+#members-content a {
+    /* background: #3bbced; */
+    /* padding: 10px; */
+    /* background: #eee; */
+    background: #fff;
+    overflow: auto;
+    border-radius: 5px;
+    /* text-align: center; */
+}
+
+#members-content div:nth-child(even) {
+    /* background: #777; */
+    /* padding: 30px; */
+}
+
+.member-cardLayout {
+    padding: 5px 20px;
+    position: relative;
+}
+
+.member-cardLayout .member_relationship {
+    color: grey;
+    text-align: left;
+    padding: 0;
+    font-size: 1.3em;
+}
+
+.member-cardLayout .member_role {
+    /* color: rgb(57, 122, 242); */
+    color: rgb(58, 113, 183);
+    text-align: right;
+    padding: 0;
+    font-size: 1.3em;
+}
+
+.member-cardLayout .member_image {
+    height: 60%;
+}
+
+.member-cardLayout .member_image img {
+    width: auto;
+    height: 100%;
+    max-width: 50%;
+}
+
+.member-cardLayout .member_name {
+    text-align: left;
+    font-size: 1.3em;
+    color: darkgoldenrod;
+    font-weight: bolder;
+}
+
+.member-cardLayout .icon_set_row {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.member-cardLayout .icon_set {
+    float: left;
+    margin-right: 20px;
+    /* color: rgb(58, 113, 183); */
+    color: #4285f4;
+
+}
+.icon_set_trash{color: #4285f4;}
+
+#addNewMember {
+    color: rgb(57, 122, 242);
+    text-align: center;
+    padding: 15px;
+    font-size: 1.4em;
+}
+
+.modal-position {
+    margin-right: 50%;
+}
+
+.modal-size {
+    width: 1000px;
+}
+
+@media (max-width: 1580px) {
+    .member-cardLayout .member_relationship, .member-cardLayout .member_role, .member-cardLayout .member_name {
+        font-size: 1.1em;
+    }
+
+}
+
+@media (max-width: 980px) {
+    .member-cardLayout .member_relationship, .member-cardLayout .member_role, .member-cardLayout .member_name {
+        font-size: .9em;
+    }
+}
+
+#pet-content,#emergency_contact-content,
+#beneficiary-content ,#dependents-content,#friend-content{
+    max-height: 510px;
+    overflow-y: scroll;
+}
+/* temporary fix for card width */
+@media (min-width:320px) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    #members-content,#pet-content,#emergency_contact-content,
+    #beneficiary-content ,#dependents-content,#friend-content{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+@media (min-width:481px) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    #members-content,#pet-content,#emergency_contact-content,
+    #beneficiary-content ,#dependents-content,#friend-content{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media (min-width:641px) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    #members-content,#pet-content,#emergency_contact-content,
+    #beneficiary-content ,#dependents-content,#friend-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width:961px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    #members-content,#pet-content,#emergency_contact-content,
+    #beneficiary-content ,#dependents-content,#friend-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+@media (min-width:1025px) {
+    /* big landscape tablets, laptops, and desktops */
+    #members-content,#pet-content,#emergency_contact-content,
+    #beneficiary-content ,#dependents-content,#friend-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+    #members-content,#pet-content,#emergency_contact-content,
+    #beneficiary-content ,#dependents-content,#friend-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* temporary fix for card width */
+
+/*#members-content*/
+
+/* project\estates\forms\styles.css */
+
+.form-check-input[type=checkbox][class*=filled-in]:checked+label:after, label.btn input[type=checkbox][class*=filled-in]:checked+label:after {
+    top: 0;
+    border-color: rgb(57, 122, 242);
+    background-color: rgb(57, 122, 242);
+    z-index: 0;
+}
+.select-wrapper input.select-dropdown {
+    display: block;
+    height: auto;
+    width: 100%;
+    padding: 0 .75rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 2.25;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* relevant styles */
+.img__wrap {
+    position: relative;
+    /* height: 75px;
+    width: auto; */
+}
+
+.img__description_layer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    /* top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    /* background: rgb(58, 113, 183); */
+    /* background: #0d47a1; */
+    background: #4285F4;
+    text-align: center;
+    height: 100%;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* transition effect. not necessary */
+    transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description_layer {
+    visibility: visible;
+    opacity: 1;
+}
+
+.img__description {
+    transition: .2s;
+    transform: translateY(1em);
+}
+
+.img__wrap:hover .img__description {
+    transform: translateY(0);
+}
+
+.validated_false{
+    border:2px solid red;
+}
+
+.rounded_5_button{
+    border-radius: 5px;
+}
+.rounded_8_button{
+    border-radius: 8px;
+}
+/* project\estates\forms\styles.css */
+
+.document_list_trigger_active{
+    background-color: rgba(255, 248, 146, 0.48) !important;
+}
+
+.notes_less , .notes_more{
+   width:20px;
+}
+
+

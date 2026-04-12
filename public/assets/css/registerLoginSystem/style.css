@@ -1,0 +1,55 @@
+.form-elegant .font-small {
+    font-size: 0.8rem;
+}
+.form-elegant .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+}
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+}
+.signIn {
+    max-width: 500px;
+}
+.socialMedia {
+    height: 30px;
+}
+.special-font {
+    font-size: .6em;
+}
+html {
+    min-height: 150%; /* make sure it is at least as tall as the viewport */
+    position: relative;
+}
+.disclaimer-text {
+    /* color:#BD9E85; */
+    /* color: #21BFE6; */
+    /* color:#A7CDE3;
+    color: #a7d9e3;
+    color: #d2e3a7;
+    color: #e2e3a7; */
+    /* color: #00477E; */
+    /* color: black; */
+    color: #BD9E85;
+}
+body {
+    height: 100%; /* force the BODY element to match the height of the HTML element */
+}
+.waterBackground {
+    /* background: url(../img/water.jpg) no-repeat center center fixed;  */
+    background: url(../../img/bluewater4.jpg) no-repeat center center fixed;
+    /* min-height: 100%; */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 5; /*to fix mozilla bug */
+}
