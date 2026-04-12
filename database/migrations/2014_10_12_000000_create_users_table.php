@@ -22,6 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->tinyInteger('user_status')->default(1)->nullable();
+            $table->tinyInteger('spouse_logged')->default(0)->nullable();
+            $table->string('user_sessions_last_active')->nullable()->comment('this is PHP time()');
+            $table->tinyInteger('user_access')->default(0)->nullable()->comment('0 => estate 1 => kid');
+            $table->string('action_on')->nullable();
         });
     }
 
