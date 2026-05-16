@@ -3,10 +3,12 @@
 namespace App;
 
 use App\Helpers\Helper;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Config;
+use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Member extends Model
@@ -18,9 +20,14 @@ class Member extends Model
 
     protected $guarded = ['member_id'];
 
-    public static $logAttributes = ['member_first_name'];
+    use HasFactory, LogsActivity;
 
-    use LogsActivity;
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()->logOnly(['member_first_name']);
+    }
+
 
     public static function boot()
     {
