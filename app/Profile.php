@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Profile extends Model
@@ -15,9 +16,14 @@ class Profile extends Model
 
     protected $guarded = ['profile_id'];
 
-    public static $logAttributes = ['profile_first_name'];
-
     use LogsActivity;
+
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()->logOnly(['profile_first_name']);
+    }
+
 
 
     public static function boot()

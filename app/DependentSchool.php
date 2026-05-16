@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class DependentSchool extends Model
@@ -14,9 +15,14 @@ class DependentSchool extends Model
     protected $guarded = [];
     public $timestamps = false;
 
-    public static $logAttributes = ['dependent_school_name'];
-
     use LogsActivity;
+
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()->logOnly(['dependent_school_name']);
+    }
+
 
 
     public function member()
