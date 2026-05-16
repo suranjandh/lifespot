@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Site extends Model
@@ -13,11 +14,16 @@ class Site extends Model
 
     protected $guarded = ['site_id'];
 
-    public static $logAttributes = ['site_name'];
-
     public $timestamps = false ;
 
     use LogsActivity;
+
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()->logOnly(['site_name']);
+    }
+
 
     public static function boot() {
         parent::boot();

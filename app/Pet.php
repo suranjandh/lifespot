@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 class Pet extends Model
@@ -13,9 +14,14 @@ class Pet extends Model
 
     protected $guarded = ['pet_id'];
 
-    public static $logAttributes = ['pet_name'];
-
     use LogsActivity;
+
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()->logOnly(['pet_name']);
+    }
+
 
 
     public static function boot() {
