@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -14,7 +15,7 @@ class Estate extends Model
 
     protected $guarded = ['estate_id'];
 
-    use LogsActivity;
+    use HasFactory, LogsActivity;
 
 
     public function getActivitylogOptions(): LogOptions

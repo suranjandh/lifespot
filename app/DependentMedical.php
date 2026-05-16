@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -16,7 +17,9 @@ class DependentMedical extends Model
 
     public $timestamps = false;
 
-    use LogsActivity;
+    public $incrementing = false;
+
+    use HasFactory, LogsActivity;
 
 
     public function getActivitylogOptions(): LogOptions

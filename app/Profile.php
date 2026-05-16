@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,7 @@ class Profile extends Model
 
     protected $guarded = ['profile_id'];
 
-    use LogsActivity;
+    use HasFactory, LogsActivity;
 
 
     public function getActivitylogOptions(): LogOptions
