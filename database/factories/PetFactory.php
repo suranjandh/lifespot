@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PetFactory extends Factory
 {
-    use SriLankanFaker;
+    use UkUsFaker;
 
     /**
      * @var class-string<\App\Pet>
@@ -26,15 +26,15 @@ class PetFactory extends Factory
     {
         return [
             'pet_owner_user_id' => User::factory(),
-            'pet_name' => fake()->randomElement(['Bola', 'Kalu', 'Sudu', 'Rosa', 'Malli', 'Chooti', 'Raja', 'Kiri', 'Lassie', 'Milo']),
+            'pet_name' => fake()->randomElement(['Max', 'Bella', 'Charlie', 'Luna', 'Daisy', 'Buddy', 'Molly', 'Oscar', 'Ruby', 'Milo']),
             'pet_gender' => fake()->randomElement(['Male', 'Female']),
             'pet_image' => '',
-            'pet_clinic_name' => fake()->randomElement(['Colombo Pet Vet', 'Kandy Animal Clinic', 'Galle Veterinary Care', 'Negombo Pet Hospital']),
-            'pet_description' => fake()->randomElement(['Sri Lankan street dog', 'Labrador retriever', 'Persian cat', 'Domestic shorthair cat', 'Parrot']),
-            'pet_tag_id' => 'LK-PET-' . fake()->unique()->numerify('#####'),
-            'pet_veterinarian_phone' => $this->sriLankanPhone(),
+            'pet_clinic_name' => fake()->randomElement(['London Pet Vet', 'Manchester Animal Clinic', 'Brooklyn Veterinary Care', 'Seattle Pet Hospital']),
+            'pet_description' => fake()->randomElement(['Labrador retriever', 'Cocker spaniel', 'British shorthair cat', 'Domestic shorthair cat', 'Golden retriever']),
+            'pet_tag_id' => 'PET-' . fake()->unique()->numerify('#####'),
+            'pet_veterinarian_phone' => $this->ukUsPhone(),
             'pet_birth_day' => fake()->dateTimeBetween('-14 years', '-3 months')->format('Y-m-d'),
-            'pet_doctor_name' => 'Dr. ' . fake()->randomElement(['Perera', 'Fernando', 'Silva', 'Jayasinghe', 'Herath']),
+            'pet_doctor_name' => 'Dr. ' . fake()->randomElement(['Smith', 'Johnson', 'Taylor', 'Wilson', 'Walker']),
             'pet_guardian' => Member::factory(),
             'pet_notes' => fake()->optional(0.45)->sentence(),
             'action_on' => 'Pet',

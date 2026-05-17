@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class MemberFactory extends Factory
 {
-    use SriLankanFaker;
+    use UkUsFaker;
 
     /**
      * @var class-string<\App\Member>
@@ -23,15 +23,15 @@ class MemberFactory extends Factory
      */
     public function definition(): array
     {
-        $person = $this->sriLankanPerson();
-        $address = $this->sriLankanAddress();
+        $person = $this->ukUsPerson();
+        $address = $this->ukUsAddress();
 
         return [
             'member_owner_user_id' => User::factory(),
             'member_first_name' => $person['first'],
             'member_last_name' => $person['last'],
             'member_email' => fake()->unique()->safeEmail(),
-            'member_phone' => $this->sriLankanPhone(),
+            'member_phone' => $this->ukUsPhone(),
             'member_address' => $address['address'],
             'member_address2' => $address['address2'],
             'member_city' => $address['city'],
@@ -52,13 +52,13 @@ class MemberFactory extends Factory
             'member_is_emergency_contact' => fake()->boolean(25) ? 1 : 0,
             'member_is_friend' => fake()->boolean(20) ? 1 : 0,
             'isAssociatedWithCoTrustee' => fake()->boolean(10) ? 1 : 0,
-            'member_phone2' => fake()->boolean(25) ? $this->sriLankanPhone() : null,
+            'member_phone2' => fake()->boolean(25) ? $this->ukUsPhone() : null,
             'member_birth_day' => fake()->dateTimeBetween('-80 years', '-18 years')->format('Y-m-d'),
             'isAssociatedWithSpouse' => fake()->boolean(10) ? 1 : 0,
             'member_associated_user' => 0,
             'member_invitation_status' => fake()->numberBetween(0, 2),
             'member_join_account_access' => fake()->boolean(10) ? 1 : 0,
-            'member_gifts' => fake()->optional(0.2)->randomElement(['Tea set', 'Books', 'Ayurvedic hamper', 'Flowers']),
+            'member_gifts' => fake()->optional(0.2)->randomElement(['Tea set', 'Books', 'Gourmet hamper', 'Flowers']),
             'member_age' => null,
             'member_guardian_member_id' => null,
             'action_on' => 'Member',

@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class EstateFactory extends Factory
 {
-    use SriLankanFaker;
+    use UkUsFaker;
 
     /**
      * @var class-string<\App\Estate>
@@ -23,12 +23,12 @@ class EstateFactory extends Factory
      */
     public function definition(): array
     {
-        $person = $this->sriLankanPerson();
-        $address = $this->sriLankanAddress();
+        $person = $this->ukUsPerson();
+        $address = $this->ukUsAddress();
 
         return [
             'estate_user_id' => User::factory(),
-            'estate_name' => fake()->randomElement(['Family Home', 'Lake View Property', 'Coconut Grove Estate', 'Galle Road Apartment', 'Hill Country House']),
+            'estate_name' => fake()->randomElement(['Family Home', 'Lake View Property', 'Oakwood Estate', 'City Apartment', 'Hill Country House', 'Brookside Cottage']),
             'estate_owner_name' => $person['first'] . ' ' . $person['last'],
             'estate_address' => $address['address'],
             'estate_address2' => $address['address2'],

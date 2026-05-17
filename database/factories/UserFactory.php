@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
  */
 class UserFactory extends Factory
 {
-    use SriLankanFaker;
+    use UkUsFaker;
 
     /**
      * The name of the factory's corresponding model.
@@ -27,7 +27,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        $person = $this->sriLankanPerson();
+        $person = $this->ukUsPerson();
 
         return [
             'first_name' => $person['first'],

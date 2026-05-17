@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class SiteFactory extends Factory
 {
-    use SriLankanFaker;
+    use UkUsFaker;
 
     /**
      * @var class-string<\App\Site>
@@ -23,11 +23,11 @@ class SiteFactory extends Factory
      */
     public function definition(): array
     {
-        $person = $this->sriLankanPerson();
+        $person = $this->ukUsPerson();
 
         return [
             'site_owner_user_id' => User::factory(),
-            'site_name' => fake()->randomElement(['LifeSpot Family Vault', 'Colombo Estate Plan', 'Family Legacy Hub', 'Trust Documents Portal']),
+            'site_name' => fake()->randomElement(['LifeSpot Family Vault', 'London Estate Plan', 'Family Legacy Hub', 'Trust Documents Portal', 'New York Estate Plan']),
             'site_owners' => $person['first'] . ' ' . $person['last'],
             'site_image' => '',
             'action_on' => 'Site',

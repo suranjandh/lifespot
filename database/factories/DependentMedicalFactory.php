@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class DependentMedicalFactory extends Factory
 {
-    use SriLankanFaker;
+    use UkUsFaker;
 
     /**
      * @var class-string<\App\DependentMedical>
@@ -23,14 +23,14 @@ class DependentMedicalFactory extends Factory
      */
     public function definition(): array
     {
-        $address = $this->sriLankanAddress();
+        $address = $this->ukUsAddress();
 
         return [
             'dependent_medical_member_id' => Member::factory()->dependent(),
-            'dependent_medical_primary_care' => fake()->randomElement(['Asiri Medical Centre', 'Durdans Hospital', 'Nawaloka Hospital', 'Lanka Hospitals', 'Teaching Hospital Kandy']),
-            'dependent_medical_name' => 'Dr. ' . fake()->randomElement(['Perera', 'Fernando', 'Silva', 'Wijesinghe', 'Bandara']),
+            'dependent_medical_primary_care' => fake()->randomElement(['St Thomas Hospital', 'Manchester Royal Infirmary', 'Massachusetts General Hospital', 'NewYork-Presbyterian Hospital', 'UCLA Medical Center']),
+            'dependent_medical_name' => 'Dr. ' . fake()->randomElement(['Smith', 'Johnson', 'Taylor', 'Wilson', 'Walker']),
             'dependent_medical_email' => fake()->unique()->safeEmail(),
-            'dependent_medical_phone' => $this->sriLankanPhone(),
+            'dependent_medical_phone' => $this->ukUsPhone(),
             'dependent_medical_web' => fake()->optional(0.35)->url(),
             'dependent_medical_address' => $address['address'],
             'dependent_medical_address2' => $address['address2'],

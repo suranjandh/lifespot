@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProfileFactory extends Factory
 {
-    use SriLankanFaker;
+    use UkUsFaker;
 
     /**
      * @var class-string<\App\Profile>
@@ -23,8 +23,8 @@ class ProfileFactory extends Factory
      */
     public function definition(): array
     {
-        $person = $this->sriLankanPerson();
-        $address = $this->sriLankanAddress();
+        $person = $this->ukUsPerson();
+        $address = $this->ukUsAddress();
 
         return [
             'profile_user_id' => User::factory(),
@@ -32,8 +32,8 @@ class ProfileFactory extends Factory
             'profile_address2' => $address['address2'],
             'profile_last_name' => $person['last'],
             'profile_email' => fake()->unique()->safeEmail(),
-            'profile_phone' => $this->sriLankanPhone(),
-            'profile_phone2' => fake()->boolean(25) ? $this->sriLankanPhone() : null,
+            'profile_phone' => $this->ukUsPhone(),
+            'profile_phone2' => fake()->boolean(25) ? $this->ukUsPhone() : null,
             'profile_address' => $address['address'],
             'profile_city' => $address['city'],
             'profile_state' => $address['state'],
