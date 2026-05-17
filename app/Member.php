@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Helpers\Helper;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -19,7 +20,7 @@ class Member extends Model
 
     protected $guarded = ['member_id'];
 
-    use LogsActivity;
+    use HasFactory, LogsActivity;
 
 
     public function getActivitylogOptions(): LogOptions
